@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Búsqueda de Vuelos</title>
+</head>
+<body>
+    <div class="flight-search-container">
+        <h2>Reserva tu Vuelo - Agencia de Viajes</h2>
+        <form id="flightForm">
+            <label for="origin">Origen:</label>
+            <input type="text" id="origin" name="origin" placeholder="Ciudad de salida" required>
+            
+            <label for="destination">Destino:</label>
+            <input type="text" id="destination" name="destination" placeholder="Ciudad de destino" required>
+            
+            <label for="date">Fecha de Ida:</label>
+            <input type="date" id="date" name="date" required>
+            
+            <button type="submit" class="btn-search">Buscar Vuelos</button>
+        </form>
+    </div>
+
+    <script>
+        // Simulación de validación simple solicitada en la tarea
+        document.getElementById('flightForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let origen = document.getElementById('origin').value;
+            let destino = document.getElementById('destination').value;
+            
+            if(origen === destino){
+                alert("El origen y el destino no pueden ser iguales.");
+            } else {
+                alert('Buscando vuelos disponibles hacia ' + destino + '...');
+            }
+        });
+    </script>
+</body>
+</html>
